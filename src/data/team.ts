@@ -67,7 +67,7 @@ export const team: Member[] = [
     slug: 'paul-kieckhefen', name: 'Paul Kieckhefen', title: 'Dr.-Ing.',
     role: 'Scientific machine learning & energy systems', founder: false, page: true,
     image: '/images/team/paul-kieckhefen.jpg', email: 'paul.kieckhefen@kit.edu',
-    bio: "Paul is a scientific machine learning engineer and AI consultant at Helmholtz AI, where he has worked since June 2025. He combines numerical simulation with machine learning to build practical tools for energy and industry. His current work includes probabilistic foundation models for power distribution networks, AI assistance for hydrology simulations, and multimodal surrogate models for nuclear accident simulations. He also develops reproducible data pipelines, simulation interfaces, and scientific dashboards.\n\nBefore joining Helmholtz AI, Paul worked as a Senior Specialist in Digitalization at BASF from 2021 to 2025, applying plant-data analysis, forecasting, and simulation to industrial problems. He previously researched numerical methods for solids processing at Hamburg University of Technology, earning a Dr.-Ing. in Process Engineering with distinction in 2021. His doctoral research focused on predicting product properties in fluidized-bed spray granulation using CFD–DEM methods.",
+    bio: "Paul is a scientific machine learning engineer and AI consultant at Helmholtz AI, where he has worked since June 2025. He combines numerical simulation with machine learning to build practical tools for energy and industry. His current work includes probabilistic foundation models for power distribution networks, agentic model chains for water-management simulations, and multimodal surrogate models for nuclear accident simulations. For the Solution Lab Rur–Erft digital twin, he implemented the agentic interface and model chain framework. He also develops reproducible data pipelines, simulation interfaces, and scientific dashboards.\n\nBefore joining Helmholtz AI, Paul worked as a Senior Specialist in Digitalization at BASF from 2021 to 2025, applying plant-data analysis, forecasting, and simulation to industrial problems. He previously researched numerical methods for solids processing at Hamburg University of Technology, earning a Dr.-Ing. in Process Engineering with distinction in 2021. His doctoral research focused on predicting product properties in fluidized-bed spray granulation using CFD–DEM methods.",
     interests: ['Surrogate modeling', 'Energy systems', 'Uncertainty quantification', 'AI agents for simulation', 'Scientific software', 'CFD–DEM'],
     profile: 'https://kieckhefen.eu/',
     linkedin: 'https://www.linkedin.com/in/paul-kieckhefen-a3801096',
@@ -76,6 +76,7 @@ export const team: Member[] = [
     sources: [
       { label: 'Personal website', url: 'https://kieckhefen.eu/' },
       { label: 'Selected projects', url: 'https://kieckhefen.eu/projects/' },
+      { label: 'Solution Lab Rur–Erft', url: 'https://solution-lab-rur-erft.org/' },
       { label: 'KIT researcher profile', url: 'https://www.scc.kit.edu/en/staff/18379.php' },
       { label: 'Helmholtz AI team', url: 'https://www.helmholtz.ai/applied-ai/ai-consultancy-teams/goetz-team/' },
     ],

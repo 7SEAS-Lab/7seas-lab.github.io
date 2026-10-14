@@ -27,7 +27,7 @@ import { projects } from "../../data/projects";
           >
             <img
               src={p.image}
-              alt={`${p.name}: ${p.category} illustration`}
+              alt={p.imageCredit?.label ?? `${p.name}: ${p.category} illustration`}
               width="680"
               height="440"
             />

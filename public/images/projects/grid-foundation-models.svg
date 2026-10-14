@@ -1,1 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560"><rect width="900" height="560" fill="#edf6f9"/><g stroke="#1d87b8" stroke-width="3" fill="none"><path d="M280 145L450 110L620 145L580 290L450 340L320 290Z M280 145L580 290M620 145L320 290M450 110V340"/></g><g fill="#159da7"><circle cx="280" cy="145" r="20"/><circle cx="450" cy="110" r="20"/><circle cx="620" cy="145" r="20"/><circle cx="580" cy="290" r="20"/><circle cx="450" cy="340" r="20"/><circle cx="320" cy="290" r="20"/></g><text x="450" y="440" text-anchor="middle" font-family="Arial,sans-serif" font-size="32" fill="#0a2a5c">Probabilistic grid models</text><text x="450" y="480" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#527184">Scientific models. Connected workflows.</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" role="img" aria-labelledby="title desc">
+<title id="title">Probabilistic grid models</title><desc id="desc">One representation. Many network tasks.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#edf6f9"/><stop offset="1" stop-color="#f5faf9"/></linearGradient><linearGradient id="flow"><stop stop-color="#1d87b8"/><stop offset="1" stop-color="#159da7"/></linearGradient></defs>
+<path fill="url(#bg)" d="M0 0h900v560H0z"/>
+<g fill="none" stroke="#cfE3e8" stroke-width="1"><path d="M48 72H852M48 400H852"/><path d="M48 66v12m804-12v12M48 394v12m804-12v12"/></g>
+<text x="58" y="49" font-family="Arial,sans-serif" font-size="12" letter-spacing="2.5" fill="#527184">AI FOR ENERGY</text>
+<g fill="none" stroke="#1d87b8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M145 235H250V145H365M250 235H405V325H500M250 235V325H330M405 235V155H475"/></g>
+<g fill="#edf6f9" stroke="#0a2a5c" stroke-width="4"><circle cx="145" cy="235" r="11"/><circle cx="250" cy="235" r="11"/><circle cx="365" cy="145" r="11"/><circle cx="405" cy="235" r="11"/><circle cx="500" cy="325" r="11"/><circle cx="330" cy="325" r="11"/><circle cx="475" cy="155" r="11"/></g><g fill="#159da7"><circle cx="365" cy="145" r="5"/><circle cx="500" cy="325" r="5"/><circle cx="330" cy="325" r="5"/></g>
+<path d="M530 100V365" stroke="#cfe3e8" stroke-dasharray="3 7"/>
+<g fill="none" stroke="#bed8df"><path d="M580 325H800M580 325V130M580 270H800M580 215H800M580 160H800"/></g>
+<path d="M580 259C620 254 627 164 665 155S721 260 800 132L800 248C730 310 705 257 665 245S620 315 580 303Z" fill="#159da7" opacity=".15"/>
+<path d="M580 281C620 284 628 204 665 200S726 285 800 190" fill="none" stroke="#159da7" stroke-width="5"/>
+<circle cx="665" cy="200" r="6" fill="#0a2a5c"/><path d="M665 155V245m-8-90h16m-16 90h16" stroke="#1d87b8" stroke-width="2"/>
+<text x="145" y="375" font-family="Arial,sans-serif" font-size="12" fill="#527184" letter-spacing="2">DISTRIBUTION NETWORK</text><text x="580" y="375" font-family="Arial,sans-serif" font-size="12" fill="#527184" letter-spacing="2">PREDICTION + UNCERTAINTY</text>
+<text x="450" y="460" text-anchor="middle" font-family="Arial,sans-serif" font-weight="600" font-size="34" letter-spacing=".5" fill="#0a2a5c">Probabilistic grid models</text>
+<text x="450" y="495" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#527184">One representation. Many network tasks.</text>
+</svg>
