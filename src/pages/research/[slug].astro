@@ -27,9 +27,9 @@ const projectPublications = publications.filter((publication) => publication.pro
     <img
       class="project-banner"
       src={project.image}
-      alt={`${project.name}: ${project.category} illustration`}
-      width="1100"
-      height="500"
+      alt={project.imageCredit?.label ?? `${project.name}: ${project.category} illustration`}
+      width="900"
+      height="560"
     />
     <div class="detail-columns">
       <div class="prose">
@@ -51,22 +51,21 @@ const projectPublications = publications.filter((publication) => publication.pro
       </div>
       <aside class="profile-aside">
         <p class="eyebrow">People at 7SEAS</p>
-        {project.members.map((slug) => {
+        {project.members.map(({ slug, contribution }) => {
           const member = team.find((m) => m.slug === slug)!;
           return (
-            <a class="mini-member" href={`/team/${slug}/`}>
-              {member.image && <img src={member.image} alt="" width="38" height="38" style={member.slug === "markus-goetz" ? "object-position: center top" : undefined} />}
-              {member.name} ↗
-            </a>
+            <div class="project-member">
+              <a class="mini-member" href={member.page ? `/team/${slug}/` : member.profile}>
+                {member.image && <img src={member.image} alt="" width="38" height="38" style={member.slug === "markus-goetz" ? "object-position: center top" : undefined} />}
+                {member.name} ↗
+              </a>
+              {contribution && <p class="member-contribution">{contribution}</p>}
+            </div>
           );
         })}
         <p class="eyebrow aside-label">Project resources</p>
         {project.github && <a href={project.github}>Source & documentation ↗</a>}
         <a href={project.reference}>Research reference ↗</a>
-        <p class="image-credit">
-          Project description based on the linked {project.github ? "repository" : "research resource"}. Illustrations by
-          7SEAS Lab.
-        </p>
       </aside>
     </div>
     {projectPublications.length > 0 && (

@@ -11,7 +11,10 @@ export function getStaticPaths() {
 }
 const { member } = Astro.props;
 const memberPublications = publications.filter((publication) => publication.members.includes(member.slug));
-const related = projects.filter((p) => p.members.includes(member.slug));
+const related = projects.flatMap((project) => {
+  const association = project.members.find((person) => person.slug === member.slug);
+  return association ? [{ ...project, contribution: association.contribution }] : [];
+});
 ---
 
 <Layout title={member.name} description={member.bio} active="Team">
@@ -95,13 +98,19 @@ const related = projects.filter((p) => p.members.includes(member.slug));
     {related.length > 0 && (
       <section class="related-section">
         <p class="eyebrow">Explore the work</p>
-        <h2>Related projects</h2>
+        <h2>Projects & contributions</h2>
         <div class="related-grid">
           {related.map((p) => (
             <a href={`/research/${p.slug}/`}>
               <span>{p.category}</span>
               <h3>{p.name} ↗</h3>
               <p>{p.abstract}</p>
+              {p.contribution && (
+                <p class="project-contribution">
+                  <strong>Contribution</strong>
+                  {p.contribution}
+                </p>
+              )}
             </a>
           ))}
         </div>
