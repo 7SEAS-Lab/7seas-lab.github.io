@@ -335,7 +335,6 @@ export const team: Member[] = [
     "role": "AI consultancy for energy",
     "founder": false,
     "page": true,
-    "image": '/images/team/katharina-fluegel.jpg',
     "email": "katharina.fluegel@kit.edu",
     "bio": "Katharina works on applied scientific machine learning at KIT’s Scientific Computing Center, supporting researchers in using AI methods for energy applications.",
     "interests": [
