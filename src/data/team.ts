@@ -328,7 +328,7 @@ export const team: Member[] = [
     ],
     "image": "/images/team/marie-weiel.jpg"
   },
-  {
+    {
     "slug": "katharina-fluegel",
     "name": "Katharina Flügel",
     "title": "",
