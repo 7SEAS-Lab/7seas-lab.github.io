@@ -83,7 +83,7 @@ export const team: Member[] = [
   {
     slug: 'deifilia-kieckhefen', name: 'Deifilia Kieckhefen', title: '',
     role: 'Bayesian AI & atmospheric forecasting', founder: false, page: true,
-    image: '/images/team/diefilia-kieckhefen.jpg',
+    image: '/images/team/deifilia-kieckhefen.jpg',
     email: 'deifilia.to@kit.edu',
     bio: 'Deifilia is a researcher in the Robust and Efficient AI group at KIT’s Scientific Computing Center. She is a joint first author of the BEAST paper on Bayesian atmospheric forecasting and scalable model training.',
     interests: ['Bayesian neural networks', 'Uncertainty quantification', 'Atmospheric forecasting'],
