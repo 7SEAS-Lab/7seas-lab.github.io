@@ -200,16 +200,6 @@ import { team } from "../data/team";
         <a class="contact-email" href={`mailto:${site.email}`}>
           {site.email} <span>↗</span>
         </a>
-        <p>Contact the 7SEAS Lab team</p>
-        <div class="contact-other">
-          {team
-            .filter((m) => m.email !== site.email)
-            .map((m) => (
-              <a href={`mailto:${m.email}`}>
-                {m.name} <span>↗</span>
-              </a>
-            ))}
-        </div>
         <span class="location">
           Karlsruhe, Germany · Working across disciplines
         </span>
