@@ -1,0 +1,130 @@
+---
+import "../styles/global.css";
+import { site } from "../data/site";
+interface Props {
+  title?: string;
+  description?: string;
+  active?: string;
+}
+const { title, description = site.description, active = "About" } = Astro.props;
+const nav = [
+  ["About", "/"],
+  ["Team", "/#team"],
+  ["Research", "/research/"],
+  ["Blog", "/blog/"],
+  ["Publications", "/publications/"],
+];
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0a2a5c" />
+    <link rel="icon" type="image/svg+xml" href="/images/7seas_mini.svg" />
+    <link rel="canonical" href={canonical} />
+    <meta
+      property="og:title"
+      content={
+        title
+          ? `${title} — 7SEAS Lab`
+          : "7SEAS Lab — Scalable and Efficient AI for Science"
+      }
+    />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content={new URL("/images/7seas-concept.png", Astro.site)}
+    />
+    <title>{title ? `${title} — 7SEAS Lab` : '7SEAS Lab — Scalable and Efficient AI for Science'}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      Skip to content
+    </a>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="brand" href="/" aria-label="7SEAS Lab home">
+          <img class="brand-logo" src="/images/7seas-brand.svg" alt="7SEAS" width="160" height="64" />
+        </a>
+        <button
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          Menu <span aria-hidden="true">☰</span>
+        </button>
+        <nav id="main-nav" aria-label="Main navigation">
+          {nav.map(([label, href]) => (
+            <a
+              class:list={{ active: active === label }}
+              aria-current={active === label ? "page" : undefined}
+              href={href}
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+        <a class="nav-contact" href="/#contact">
+          Let’s talk <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand" href="/">
+          <img class="brand-logo" src="/images/7seas-brand.svg" alt="7SEAS" width="160" height="64" />
+        </a>
+        <p>Scalable and Efficient AI for Science</p>
+        <div>
+          <a href={site.github}>GitHub ↗</a>
+          <a href="/#contact">Contact ↗</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© {new Date().getFullYear()} 7SEAS Lab</span>
+        <span>Open science. Shared progress.</span>
+      </div>
+    </footer>
+    <script>
+      const toggle = document.querySelector<HTMLButtonElement>(".menu-toggle");
+      const nav = document.querySelector<HTMLElement>("#main-nav");
+      toggle?.addEventListener("click", () => {
+        const expanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", String(!expanded));
+        nav?.classList.toggle("is-open", !expanded);
+      });
+      nav?.querySelectorAll("a").forEach((link) =>
+        link.addEventListener("click", () => {
+          toggle?.setAttribute("aria-expanded", "false");
+          nav.classList.remove("is-open");
+        }),
+      );
+      if (location.pathname === "/") {
+        const team = document.querySelector("#team");
+        if (team)
+          new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                const label = entry.isIntersecting ? "Team" : "About";
+                nav?.querySelectorAll("a").forEach((a) => {
+                  const current = a.textContent === label;
+                  a.classList.toggle("active", current);
+                  if (current) a.setAttribute("aria-current", "page");
+                  else a.removeAttribute("aria-current");
+                });
+              });
+            },
+            { rootMargin: "-15% 0px -30% 0px" },
+          ).observe(team);
+      }
+    </script>
+  </body>
+</html>

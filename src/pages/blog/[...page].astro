@@ -1,0 +1,77 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import type { GetStaticPaths } from "astro";
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  );
+  return paginate(posts, { pageSize: 3 });
+}) satisfies GetStaticPaths;
+const { page } = Astro.props;
+const formatDate = (date: Date) =>
+  date.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    timeZone: "Europe/Berlin",
+  });
+---
+
+<Layout title="Blog" active="Blog">
+  <div class="container">
+    <header class="page-heading">
+      <p class="eyebrow">From the lab</p>
+      <h1>
+        Ideas, updates &<br />
+        <span class="serif-accent">open questions.</span>
+      </h1>
+      <p>
+        Research perspectives, open-source notes, and conversations around
+        scalable and efficient AI for science.
+      </p>
+    </header>
+    <div class="blog-list">
+      {page.data.map((post) => (
+        <article class="blog-row">
+          <time datetime={post.data.date.toISOString()}>
+            {formatDate(post.data.date)}
+          </time>
+          <div>
+            <p class="eyebrow">{post.data.category}</p>
+            <h2>
+              <a href={`/blog/posts/${post.id}/`}>{post.data.title}</a>
+            </h2>
+            <p>{post.data.description}</p>
+          </div>
+          <a
+            class="read-arrow"
+            href={`/blog/posts/${post.id}/`}
+            aria-label={`Read ${post.data.title}`}
+          >
+            ↗
+          </a>
+        </article>
+      ))}
+    </div>
+    <nav class="pagination" aria-label="Blog pagination">
+      {page.url.prev ? (
+        <a href={page.url.prev}>← Previous</a>
+      ) : (
+        <span class="disabled" aria-disabled="true">
+          ← Previous
+        </span>
+      )}
+      <span>
+        Page {page.currentPage} of {page.lastPage}
+      </span>
+      {page.url.next ? (
+        <a href={page.url.next}>Next →</a>
+      ) : (
+        <span class="disabled" aria-disabled="true">
+          Next →
+        </span>
+      )}
+    </nav>
+  </div>
+</Layout>

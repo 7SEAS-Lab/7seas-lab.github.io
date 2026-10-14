@@ -1,0 +1,58 @@
+---
+import type { Member } from "../data/team";
+interface Props {
+  member: Member;
+}
+const { member } = Astro.props;
+const profile = member.page ? `/team/${member.slug}/` : member.profile;
+---
+
+<article class="member-card">
+  <a href={profile} class="portrait-link" aria-label={`Meet ${member.name}`}>
+    {member.image ? (
+      <img
+        class="portrait"
+          style={member.slug === "markus-goetz" ? "object-position: center top" : member.slug === "mishal-benz" ? "object-position: right center" : undefined}
+        src={member.image}
+        alt={member.name}
+        loading="lazy"
+        width="208"
+        height="208"
+      />
+    ) : (
+      <span class="portrait initials">
+        {member.name
+          .split(" ")
+          .map((n) => n[0])
+          .join("")}
+      </span>
+    )}
+    <span class="portrait-arrow" aria-hidden="true">
+      ↗
+    </span>
+  </a>
+  <p class="eyebrow">{member.founder ? "Co-founder" : "Researcher"}</p>
+  <h3>
+    <a href={profile}>{member.name}</a>
+  </h3>
+  <p class="member-role">{member.role}</p>
+  <div class="social-links">
+    {member.linkedin && (
+      <a href={member.linkedin} aria-label={`${member.name} on LinkedIn`}>
+        LinkedIn ↗
+      </a>
+    )}
+    <a
+      href={
+        member.scholar ??
+        `https://scholar.google.com/scholar?q=${encodeURIComponent('"' + member.name + '"')}`
+      }
+      aria-label={`${member.name} on Google Scholar`}
+    >
+      Scholar ↗
+    </a>
+    <a href={`mailto:${member.email}`} aria-label={`Email ${member.name}`}>
+      Email ↗
+    </a>
+  </div>
+</article>

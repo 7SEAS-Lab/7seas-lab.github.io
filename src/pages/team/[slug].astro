@@ -1,0 +1,111 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { team } from "../../data/team";
+import PublicationCard from "../../components/PublicationCard.astro";
+import { publications } from "../../data/publications";
+import { projects } from "../../data/projects";
+export function getStaticPaths() {
+  return team
+    .filter((m) => m.page)
+    .map((member) => ({ params: { slug: member.slug }, props: { member } }));
+}
+const { member } = Astro.props;
+const memberPublications = publications.filter((publication) => publication.members.includes(member.slug));
+const related = projects.filter((p) => p.members.includes(member.slug));
+---
+
+<Layout title={member.name} description={member.bio} active="Team">
+  <div class="container section profile-page">
+    <a class="back-link" href="/#team">
+      ← Meet the team
+    </a>
+    <div class="profile-heading">
+      {member.image ? (
+        <img
+          class="portrait"
+          style={member.slug === "markus-goetz" ? "object-position: center top" : member.slug === "mishal-benz" ? "object-position: right center" : undefined}
+          src={member.image}
+          alt={member.name}
+          width="240"
+          height="240"
+        />
+      ) : (
+        <span class="portrait initials">
+          {member.name
+            .split(" ")
+            .map((n) => n[0])
+            .join("")}
+        </span>
+      )}
+      <div>
+        <p class="eyebrow">
+          {member.founder ? "Co-founder" : "Researcher"}
+        </p>
+        <h1>{member.name}</h1>
+        <p class="lead">{member.role}</p>
+        <div class="social-links">
+          {member.linkedin && <a href={member.linkedin}>LinkedIn ↗</a>}
+          <a
+            href={
+              member.scholar ??
+              `https://scholar.google.com/scholar?q=${encodeURIComponent('"' + member.name + '"')}`
+            }
+          >
+            {member.scholar ? "Google Scholar ↗" : "Google Scholar search ↗"}
+          </a>
+          {member.orcid && <a href={member.orcid}>ORCID ↗</a>}
+          <a href={`mailto:${member.email}`}>Email ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="profile-body">
+      <div class="prose">
+        <h2>Research & background</h2>
+        {member.bio.split("\n\n").map((paragraph) => <p>{paragraph}</p>)}
+        <h3>Research interests</h3>
+        <div class="tags">
+          {member.interests.map((i) => (
+            <span>{i}</span>
+          ))}
+        </div>
+        <h3>Connect</h3>
+        <p>
+          <a href={`mailto:${member.email}`}>{member.email}</a>
+        </p>
+      </div>
+      <aside class="profile-aside">
+        <p class="eyebrow">Profiles & sources</p>
+        {member.sources.map((s) => (
+          <a href={s.url}>{s.label} ↗</a>
+        ))}
+        <p class="image-credit">
+          {member.image && <>Portrait: linked institutional profile.<br /></>}
+          <br />
+          Biographical information from the linked sources.
+        </p>
+      </aside>
+    </div>
+    {memberPublications.length > 0 && (
+      <section class="related-section">
+        <p class="eyebrow">Papers & research</p>
+        <h2>Publications</h2>
+        {memberPublications.map((publication) => <PublicationCard publication={publication} />)}
+      </section>
+    )}
+    {related.length > 0 && (
+      <section class="related-section">
+        <p class="eyebrow">Explore the work</p>
+        <h2>Related projects</h2>
+        <div class="related-grid">
+          {related.map((p) => (
+            <a href={`/research/${p.slug}/`}>
+              <span>{p.category}</span>
+              <h3>{p.name} ↗</h3>
+              <p>{p.abstract}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+  </div>
+</Layout>

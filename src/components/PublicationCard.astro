@@ -1,0 +1,19 @@
+---
+import type { Publication } from "../data/publications";
+import { team } from "../data/team";
+import { projects } from "../data/projects";
+interface Props { publication: Publication }
+const { publication: p } = Astro.props;
+---
+<article id={p.id} class="publication" data-search={`${p.title} ${p.authors}`.toLocaleLowerCase()}>
+  <h3><a href={p.url}>{p.title} <span aria-hidden="true">↗</span></a></h3>
+  <p class="pub-authors">{p.authors}</p>
+  <p class="pub-venue">{p.venue} · {p.year}</p>
+  {(p.members.length > 0 || p.projects.length > 0) && (
+    <div class="pub-connections">
+      {p.members.map((slug) => <a href={`/team/${slug}/`}>{team.find((m) => m.slug === slug)?.name} ↗</a>)}
+      {p.projects.map((slug) => <a class="pub-project" href={`/research/${slug}/`}>{projects.find((project) => project.slug === slug)?.name} ↗</a>)}
+    </div>
+  )}
+  <details><summary>BibTeX</summary><pre><code>{p.bibtex}</code></pre></details>
+</article>
