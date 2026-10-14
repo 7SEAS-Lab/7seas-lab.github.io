@@ -178,6 +178,7 @@ export const team: Member[] = [
     "role": "Robust & efficient AI",
     "founder": false,
     "page": true,
+    "image": '/images/team/ekaterina-klepikova.jpg',
     "email": "ekaterina.klepikova@kit.edu",
     "bio": "Ekaterina is a researcher at KIT’s Scientific Computing Center, working on robust and efficient AI for scientific applications.",
     "interests": [
@@ -222,6 +223,7 @@ export const team: Member[] = [
     "role": "Robust & efficient AI",
     "founder": false,
     "page": true,
+    "image": '/images/team/praveen-kumar.jpg',
     "email": "praveen.kumar@kit.edu",
     "bio": "Praveen is a researcher at KIT’s Scientific Computing Center, working on robust and efficient AI for scientific applications.",
     "interests": [
@@ -266,6 +268,7 @@ export const team: Member[] = [
     "role": "Robust & efficient AI",
     "founder": false,
     "page": true,
+    "image": '/images/team/johannes-wahl.jpg',
     "email": "johannes.wahl@kit.edu",
     "bio": "Johannes Georg is a researcher at KIT’s Scientific Computing Center, working on robust and efficient AI for scientific applications.",
     "interests": [
@@ -333,7 +336,6 @@ export const team: Member[] = [
     "role": "AI consultancy for energy",
     "founder": false,
     "page": true,
-    image: '/images/team/katharina-fluegel.jpg',
     "email": "katharina.fluegel@kit.edu",
     "bio": "Katharina works on applied scientific machine learning at KIT’s Scientific Computing Center, supporting researchers in using AI methods for energy applications.",
     "interests": [
