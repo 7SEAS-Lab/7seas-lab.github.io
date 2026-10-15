@@ -360,7 +360,7 @@ export const team: Member[] = [
     "page": true,
     "image": '/images/team/jonas-funk.jpg',
     "email": "jonas.funk@kit.edu",
-    "linkedin": 'www.linkedin.com/in/jonas-vilho-funk-b66636158',
+    "linkedin": 'https://linkedin.com/in/jonas-vilho-funk-b66636158',
     "scholar": 'https://scholar.google.de/citations?user=iSFEzJAAAAAJ',
     "orcid": 'https://orcid.org/0009-0001-6602-8933',
     "bio": "Jonas works on connecting diverse AI models for the Earth system with a joint latent space.",
