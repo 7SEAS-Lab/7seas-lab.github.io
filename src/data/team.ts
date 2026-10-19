@@ -307,25 +307,36 @@ export const team: Member[] = [
     ]
   },
   {
-    "slug": "marie-weiel",
+    "slug": "mcw92",
     "name": "Marie Weiel",
-    "title": "",
-    "role": "AI consultancy for energy",
+    "title": "Dr.",
+    "role": "Scientific machine learning & optimization",
     "founder": false,
     "page": true,
     "email": "marie.weiel@kit.edu",
-    "bio": "Marie works on applied scientific machine learning at KIT’s Scientific Computing Center, supporting researchers in using AI methods for energy applications.",
+    "bio": "Marie is a Helmholtz AI consultant at KIT’s Scientific Computing Center. With a background in physics, she supports researchers in developing and applying AI methods at the intersection of machine learning, simulation, and HPC. Her interests include open and reproducible science, bio-inspired algorithms, and efficient optimization.",
     "interests": [
       "Scientific machine learning",
-      "AI for energy",
-      "Applied AI"
+      "Research software engineering",
+      "High-performance computing"
     ],
     "profile": "https://www.helmholtz.ai/applied-ai/ai-consultancy-teams/goetz-team/",
+    "scholar": "https://scholar.google.com/citations?user=xCAzgAIAAAAJ&hl=de",
+    "linkedin": "https://www.linkedin.com/in/marie-weiel",
+    "orcid": "https://orcid.org/0000-0001-9648-4385",
     "sources": [
       {
+        "label": "GitHub",
+        "url": "https://github.com/mcw92"
+      },
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/citations?user=xCAzgAIAAAAJ&hl=de",
+      },
+      {
         "label": "Institutional team profile",
-        "url": "https://www.helmholtz.ai/applied-ai/ai-consultancy-teams/goetz-team/"
-      }
+        "url": "https://www.scc.kit.edu/personen/marie.weiel.php"
+      },
     ],
     "image": "/images/team/marie-weiel.jpg"
   },
