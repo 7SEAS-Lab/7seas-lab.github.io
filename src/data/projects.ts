@@ -66,7 +66,7 @@ export const projects: Project[] = [
     description: 'Searching large parameter spaces requires methods that make efficient use of parallel resources. Propulate implements asynchronous population-based optimization: candidate solutions evolve while workers exchange information without waiting at global synchronization points.',
     points: ['Asynchronous optimization across parallel workers.', 'Evolutionary search for scientific optimization problems.', 'An open-source Python package for reproducible experiments.'],
     github: 'https://github.com/Helmholtz-AI-Energy/propulate',
-    members: [{ slug: 'markus-goetz' }, { slug: 'charlotte-debus' }, { slug: 'marie-weiel' }],
+    members: [{ slug: 'mcw92', contribution: 'Co-creator, active developer, and maintainer' }, { slug: 'markus-goetz' }, { slug: 'charlotte-debus' }],
     reference: 'https://arxiv.org/abs/2301.08713',
   },
   {
