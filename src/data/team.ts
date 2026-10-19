@@ -310,7 +310,7 @@ export const team: Member[] = [
     "slug": "mcw92",
     "name": "Marie Weiel",
     "title": "Dr.",
-    "role": "AI consultancy for energy",
+    "role": "Scientific machine learning & optimization",
     "founder": false,
     "page": true,
     "email": "marie.weiel@kit.edu",
@@ -326,13 +326,17 @@ export const team: Member[] = [
     "orcid": "https://orcid.org/0000-0001-9648-4385",
     "sources": [
       {
+        "label": "GitHub",
+        "url": "https://github.com/mcw92"
+      },
+      {
+        "label": "Scholar",
+        "url": "https://scholar.google.com/citations?user=xCAzgAIAAAAJ&hl=de",
+      },
+      {
         "label": "Institutional team profile",
         "url": "https://www.scc.kit.edu/personen/marie.weiel.php"
       },
-      {
-        "label": "GitHub",
-        "url": "https://github.com/mcw92"
-      }
     ],
     "image": "/images/team/marie-weiel.jpg"
   },
