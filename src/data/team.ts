@@ -329,7 +329,7 @@ export const team: Member[] = [
     ],
     "image": "/images/team/marie-weiel.jpg"
   },
-    {
+  {
     "slug": "katharina-fluegel",
     "name": "Katharina Flügel",
     "title": "",
@@ -351,7 +351,30 @@ export const team: Member[] = [
       }
     ]
   },
-    {
+  {
+    "slug": "jpghm",
+    "name": "Juan Pedro Gutiérrez Hermosillo Muriedas",
+    "title": "",
+    "role": "HPC and Research Software Engineering",
+    "founder": false,
+    "page": true,
+    "email": "juan.muriedas@kit.edu",
+    "bio": "Juan is a researcher in the Data Analytics, Access and Applications department  at KIT’s Scientific Computing Center. He is the main developer of perun and an active contributor of the Helmholtz Analytics Toolkit (HeAT). He is the other first author of the BEAST project.",
+    "interests": [
+      "HPC",
+      "Distributed Memory Computing",
+      "Research Software Engineering"
+    ],
+    "profile": "https://scholar.google.com/citations?user=DuvW1VkAAAAJ",
+    "linkedin": 'https://www.linkedin.com/in/juan-pedro-gutierrez-hermosillo-muriedas',
+    "orcid": 'https://orcid.org/0000-0001-8439-7145',
+    "scholar": 'https://scholar.google.com/citations?user=DuvW1VkAAAAJ',
+    sources: [
+      { label: 'Github', url: 'https://github.com/JuanPedroGHM' },
+    ],
+    "image": "/images/team/juan-muriedas.jpg"
+  },  
+  {
     "slug": "jonas-vilho-funk",
     "name": "Jonas Vilho Funk",
     "title": "",

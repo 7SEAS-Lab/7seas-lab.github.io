@@ -45,5 +45,6 @@ const labPublicationIds = new Set([
   'ozdemir2026sampling',
   'phipps2026paint',
   'kieckhefen2026beast',
+  '10.1007/978-3-031-39698-4_2' // perun
 ]);
 export const labPublications = publications.filter((publication) => labPublicationIds.has(publication.id));
