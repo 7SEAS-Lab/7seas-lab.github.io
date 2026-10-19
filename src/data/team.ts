@@ -373,5 +373,31 @@ export const team: Member[] = [
       { label: 'Github', url: 'https://github.com/JuanPedroGHM' },
     ],
     "image": "/images/team/juan-muriedas.jpg"
+  },  
+  {
+    "slug": "jonas-vilho-funk",
+    "name": "Jonas Vilho Funk",
+    "title": "",
+    "role": "Scientific machine learning & Earth systems",
+    "founder": false,
+    "page": true,
+    "image": '/images/team/jonas-funk.jpg',
+    "email": "jonas.funk@kit.edu",
+    "linkedin": 'https://www.linkedin.com/in/jonas-vilho-funk-b66636158',
+    "scholar": 'https://scholar.google.de/citations?user=iSFEzJAAAAAJ',
+    "orcid": 'https://orcid.org/0009-0001-6602-8933',
+    "bio": "Jonas works on connecting diverse AI models for the Earth system with a joint latent space.",
+    "interests": [
+      "World models",
+      "Latent representation learning",
+      "Earth system AI"
+    ],
+    "profile": "https://www.scc.kit.edu/en/staff/19200.php",
+    "sources": [
+      {
+        "label": "KIT researcher profile",
+        "url": "https://www.scc.kit.edu/en/staff/19200.php"
+      }
+    ]
   },
 ];
